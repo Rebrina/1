@@ -13,7 +13,7 @@ with open('cookbook.txt') as f:
           cook_book[recipe_id].append(cook_book2)    
           i -= 1   
       f.readline()
-#print(cook_book)      
+print(cook_book)
 
 def get_shop_list_by_dishes(dishes, person_count):
     total_ingrigients = {}
