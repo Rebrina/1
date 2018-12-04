@@ -22,19 +22,16 @@ def get_shop_list_by_dishes(dishes, person_count):
     cook_book2 = file_open()
     while i < len(dishes):
         dish = dishes[i]
-        print(dish)
         j = 0
         if dish in cook_book2:
             while j < len(cook_book2[dish]):
                 new_key = cook_book2[dish][j]['ingridient_name']
-                print(new_key)
                 if new_key in total_ingrigients:
                     total_ingrigients[new_key]['quantity'] = total_ingrigients[new_key]['quantity'] + int(cook_book2[dish][j]['quantity']) * person_count
                 else:
                     total_ingrigients[new_key] = {'measure': cook_book2[dish][j]['measure'], 'quantity': int(cook_book2[dish][j]['quantity']) * person_count}
                 j += 1
         i += 1
-        print(i)
     print(total_ingrigients)
     return (total_ingrigients)
 
